@@ -1,0 +1,18 @@
+# keepup (MATE / Keep Up) configuration.
+#
+# Note: the Maven/Gradle detector registers under the "java/kotlin" language id.
+
+[include]
+languages = ["java/kotlin"]
+paths = ["pom.xml"]
+
+[ignore]
+# The test framework moves on its own cadence — leave it out of automated PRs.
+dependencies = ["org.junit.jupiter:junit-jupiter"]
+
+[thresholds]
+file = 1
+folder = 10
+
+[agent]
+name = "claude-code"
